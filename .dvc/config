@@ -1,0 +1,7 @@
+[core]
+    remote = remote
+    autostage = false
+
+['remote "remote"']
+    url = s3://attention_control_vkcloud
+    endpointurl = https://hb.bizmrg.com/

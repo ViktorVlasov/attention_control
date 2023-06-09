@@ -1,0 +1,22 @@
+stages:
+  prepare:
+    cmd: python src/data/data_splitter.py --dataset_path data/raw/sfd_with_labels --output_path data/interim/dataset_split
+    deps:
+      - src/data/data_splitter.py
+    outs:
+      - data/interim/dataset_split
+
+  train:
+    cmd: python src/models/train_model.py --config src/configs/default_config.yaml
+    deps:
+    - src/train_model.py
+    outs:
+    - logs/efficientnet-b0.pt
+
+  evaluate:
+    cmd: python src/models/test_model.py --model models/efficientnet-b0.pt --config default_config.yaml
+    deps:
+      - models/efficientnet-b0.pt
+      - src/test_model.py
+    outs:
+      - results/

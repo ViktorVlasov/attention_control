@@ -1,0 +1,4 @@
+outs:
+- md5: 4b8285a2a80d8c15157f8a00feb11509
+  size: 48711151
+  path: epoch=1_valid_acc=0.09_valid_loss=2.73.ckpt

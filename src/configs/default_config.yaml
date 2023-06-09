@@ -1,0 +1,47 @@
+# ../src/configs/test.yaml
+ROOT:
+  PATH: ''
+
+DATASET:
+    RAW_IMG_DIR: 'data/raw/sfd_with_labels'
+    INTERIM_IMG_DIR: 'data/interim/dataset_split'
+    TRAIN_SIZE: 0.6
+    TEST_SIZE: 0.2
+    VAL_SIZE: 0.2
+
+DATAMODULE:
+    IMG_SIZE: 224
+    BATCH_SIZE: 1
+    NUM_WORKERS: 2
+    SHUFFLE_TRAIN: True
+    SHUFFLE_VAL: False
+    SHUFFLE_TEST: False
+
+LEARNING:
+    EXPERIMENT: 'efficientnet-b0'
+    MODEL_CHECKPOINT_PATH: ''
+    ETA: 3.0e-2
+    MAX_EPOCHS: 10
+    LEARNING.DEVICE: 'cpu'
+    SEED: 42
+
+LOGGING:
+    LOGS_FOLDER: 'logs'
+    LOGGING_INTERVAL: 'step'
+
+MLFLOW:
+  TRACKING_URI: ''
+  S3_ENDPOINT_URL: ''
+
+CHECKPOINT:
+    CKPT_FOLDER: 'checkpoints'
+    SAVE_TOP_K: 2
+    CKPT_MONITOR: 'valid_loss'
+    CKPT_MODE: 'min'
+
+ES:
+    MONITOR: 'valid_loss'
+    MIN_DELTA: 2.0e-4
+    PATIENCE: 10
+    VERBOSE: False,
+    MODE: 'min'

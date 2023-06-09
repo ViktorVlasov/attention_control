@@ -1,0 +1,4 @@
+outs:
+- md5: 1e676eda928cda459bb78ad6b12b74bf
+  size: 16759000
+  path: efficientnet-b0.pt
